@@ -6,7 +6,7 @@ locationBtn = inputPart.querySelector("button"),
 weatherPart = wrapper.querySelector(".weather-part"),
 wIcon = weatherPart.querySelector("img"),
 arrowBack = wrapper.querySelector("header i");
-
+var keyy= config.API_TOKEN;
 let api;
 
 inputField.addEventListener("keyup", e =>{
@@ -24,13 +24,13 @@ locationBtn.addEventListener("click", () =>{
 });
 
 function requestApi(city){
-    api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=5d43c5f87b096aa11ffdf76ab5b0c082`;
+    api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=` + keyy ;
     fetchData();
 }
 
 function onSuccess(position){
     const {latitude, longitude} = position.coords;
-    api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=5d43c5f87b096aa11ffdf76ab5b0c082`;
+    api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=` + keyy ;
     fetchData();
 }
 
